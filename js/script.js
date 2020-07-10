@@ -15,15 +15,14 @@ document.querySelector('body').classList.add('no-webp');
 }
 });;
 
+// ======================= burger 
+
 let sosialheaderInfo = document.querySelector('.sosialheader');
 let sosialheaderLinks = document.querySelector('.sosialheader__links');
 
 let burger = document.querySelector('.header__burger');
 let headerMenu = document.querySelector('.header__links');
 
-// sosialheaderInfo.onclick = function toggleClassShowhow () {
-// 	sosialheaderLinks.classList.toggle('show');
-// }
 
 sosialheaderInfo.addEventListener('click', toggleClassShowhow);
 burger.addEventListener('click', toggleClassActive);
@@ -37,3 +36,19 @@ function toggleClassActive () {
 	burger.classList.toggle('active');
 	headerMenu.classList.toggle('active');
 }
+
+//============================ FILTER 
+
+$('.filter__item').click(function(event){
+		// $(this).addClass.('show');
+		var i=$(this).data('filter');
+	if(i == 1){
+		$('.cardmonument').show();
+	}else{
+		$('.cardmonument').hide();
+		$('.cardmonument.f_'+i).show();
+	}
+	$('.filter__item').removeClass('show');
+	$(this).addClass('show');
+	return false;
+});
