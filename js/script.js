@@ -53,6 +53,20 @@ $('.filter__item').click(function(event){
 });
 
 //============================ POPUP =======
+//============================ SCROLL TO ANCHOR =======
+$(document).ready(function(){
+	$("a.links__link").click(function(){
+		$("html, body").animate({
+			scrollTop: $($(this).attr("href")).offset().top + "px"
+		}, {
+			duration: 1000,
+			easing: "swing"
+		});
+		return false;
+	});
+});
+//============================ SCROLL TO ANCHOR =======
+
 let orderBtn = document.querySelectorAll('.btn');
 let closeBtn = document.querySelector('.bodypopup__close');
 let popupSection = document.querySelector('.test_popup');
@@ -70,8 +84,6 @@ function openPopup(e){
 	popupSection.classList.add('show');
 	document.body.dataset.position = pagePosition;
 	document.body.style.top = -pagePosition + 'px';
-
-	
 }
 function closePopup(){
 	popupSection.classList.remove('show');
