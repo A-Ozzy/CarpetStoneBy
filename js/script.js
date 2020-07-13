@@ -40,7 +40,6 @@ function toggleClassActive () {
 //============================ FILTER 
 
 $('.filter__item').click(function(event){
-		// $(this).addClass.('show');
 		var i=$(this).data('filter');
 	if(i == 1){
 		$('.cardmonument').show();
@@ -52,3 +51,35 @@ $('.filter__item').click(function(event){
 	$(this).addClass('show');
 	return false;
 });
+
+//============================ POPUP =======
+let orderBtn = document.querySelectorAll('.btn');
+let closeBtn = document.querySelector('.bodypopup__close');
+let popupSection = document.querySelector('.test_popup');
+let wrapper = document.querySelector('.wrapper');
+
+for (let i = 0; i < orderBtn.length; i++) {
+	orderBtn[i].addEventListener('click', openPopup);
+}
+
+closeBtn.addEventListener('click', closePopup);
+
+function openPopup(e){
+	let pagePosition = window.pageYOffset;
+	wrapper.classList.add('lock');
+	popupSection.classList.add('show');
+	document.body.dataset.position = pagePosition;
+	document.body.style.top = -pagePosition + 'px';
+
+	
+}
+function closePopup(){
+	popupSection.classList.remove('show');
+	wrapper.classList.remove('lock');
+	let pagePosition = parseInt(document.body.dataset.position, 10);
+	document.body.style.top = 'auto';
+	window.scroll({top: pagePosition, left: 0});
+	document.body.removeAttribute('data-position');
+}
+
+//============================ POPUP =======
