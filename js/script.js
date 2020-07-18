@@ -19,6 +19,7 @@ document.querySelector('body').classList.add('no-webp');
 
 let sosialheaderInfo = document.querySelector('.sosialheader');
 let sosialheaderLinks = document.querySelector('.sosialheader__links');
+let menuLinks = document.querySelectorAll('.links__link');
 
 let burger = document.querySelector('.header__burger');
 let headerMenu = document.querySelector('.header__links');
@@ -27,6 +28,9 @@ let headerMenu = document.querySelector('.header__links');
 sosialheaderInfo.addEventListener('click', toggleClassShowhow);
 burger.addEventListener('click', toggleClassActive);
 
+for (let k = 0; k < menuLinks.length; k++) {
+	menuLinks[k].addEventListener('click', closeMenu);
+}
 
 function toggleClassShowhow () {
 	sosialheaderLinks.classList.toggle('show');
@@ -37,7 +41,16 @@ function toggleClassActive () {
 	headerMenu.classList.toggle('active');
 }
 
-//============================ FILTER 
+function	closeMenu(){
+	if(burger.classList.contains('active') && headerMenu.classList.contains('active')){
+		burger.classList.remove('active');
+		headerMenu.classList.remove('active');
+	}
+
+}
+
+//============================ FILTER ====================
+//============================ POPUP =======
 
 $('.filter__item').click(function(event){
 		var i=$(this).data('filter');
@@ -94,4 +107,4 @@ function closePopup(){
 	document.body.removeAttribute('data-position');
 }
 
-//============================ POPUP =======
+
