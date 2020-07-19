@@ -169,7 +169,7 @@ body {
   position: fixed;
   top: 0;
   left: calc(50% - 600px);
-  z-index: 2;
+  z-index: 50;
 }
 
 .nav {
@@ -666,6 +666,161 @@ body {
   padding: 5px;
 }
 
+.monumentpage {
+  position: relative;
+  z-index: 2;
+  background: url("../img/bg_monument.jpg") 100% 100%/cover no-repeat;
+}
+
+.monumentpage:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(245, 245, 245, 0.9);
+}
+
+.monumentpage__link {
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  display: block;
+}
+
+.monumentpage__link a {
+  color: gray;
+  text-decoration: underline;
+  padding: 20px;
+}
+
+.monumentpage__link a:hover {
+  color: #000;
+}
+
+.monumentpage__title {
+  padding: 20px 0 0 0;
+}
+
+.monumentpage__area {
+  margin: 30px 0 0 0;
+}
+
+.areamonument {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
+}
+
+.areamonument__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  padding: 0 15px 0 0;
+}
+
+.imagearea {
+  position: relative;
+}
+
+.imagearea__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.imagearea__price {
+  color: #f5f5f5;
+  background-color: #383838;
+  padding: 10px;
+  position: absolute;
+  top: 30px;
+  left: 15px;
+}
+
+.imagearea__zoom {
+  background-color: #383838;
+  position: absolute;
+  top: 30px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.imagearea__zoom img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.monumentdescription__title {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px 0;
+  color: #383838;
+}
+
+.monumentdescription__note {
+  padding: 30px 10px;
+  color: #383838;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 1px;
+}
+
+.rowdescription {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #383838;
+  padding: 10px 15px;
+  color: #383838;
+  font-size: 17px;
+}
+
+.itemdescription {
+  padding: 30px 10px;
+}
+
+.itemdescription__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #383838;
+  padding: 0 0 15px 0;
+}
+
+.itemdescription__content {
+  color: #383838;
+  font-size: 17px;
+  line-height: 17px;
+}
+
+.itemdescription__content p {
+  padding: 10px 0;
+}
+
+.itemdescription__list {
+  padding: 0 0 0 30px;
+}
+
+.itemdescription__list li {
+  list-style-type: disc;
+}
+
 .title-w {
   color: #f5f5f5;
   font-size: 28px;
@@ -953,6 +1108,23 @@ input[type=submit]:active {
   }
 }
 
+@media (max-width: 995px) {
+  .areamonument {
+    display: block;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+
+  .areamonument__item {
+    padding: 0;
+  }
+
+  .imagearea__zoom {
+    display: none;
+  }
+}
+
 @media (max-width: 975px) {
   .whyus {
     padding: 30px 0 30px 0;
@@ -1066,6 +1238,12 @@ input[type=submit]:active {
   }
 }
 
+@media (max-width: 620px) {
+  .monumentpage__title {
+    font-size: 30px;
+  }
+}
+
 @media (max-width: 595px) {
   .cardmonument {
     -webkit-box-flex: 0;
@@ -1116,6 +1294,12 @@ input[type=submit]:active {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 530px) {
+  .monumentpage__title {
+    font-size: 25px;
   }
 }
 
@@ -1181,6 +1365,12 @@ input[type=submit]:active {
   }
 }
 
+@media (max-width: 450px) {
+  .monumentpage__title {
+    font-size: 20px;
+  }
+}
+
 @media (max-width: 420px) {
   .whyus__title {
     font-size: 26px;
@@ -1204,6 +1394,12 @@ input[type=submit]:active {
   }
 }
 
+@media (max-width: 365px) {
+  .monumentpage__title {
+    font-size: 17px;
+  }
+}
+
 @media (max-height: 540px) {
   .popup {
     padding: 100px 0 0 0;
@@ -1221,3 +1417,5 @@ input[type=submit]:active {
 }
 
 .webp .mainscreen{ background: url(../img/main.webp) center center/cover no-repeat; }
+
+.webp .monumentpage{ background: url(../img/bg_monument.webp) 100% 100%/cover no-repeat; }
